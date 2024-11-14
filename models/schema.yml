@@ -1,0 +1,91 @@
+
+version: 2
+
+sources:
+  - name: intel_merc  # Nome da *source* simplificado e exclusivo
+    database: DB_DLK_INTMERCDB  # Nome do banco de dados onde a tabela está localizada
+    schema: dbo  # Nome do esquema
+    tables:
+      - name: censo_inep_particulares_todos_anos  # Nome da tabela no banco
+      - name: bi_venda_colecao_rm
+      - name: brz_segmentacao_escolas
+      - name: slv_empresas
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: slv_escolas_bilingue
+    description: "Modelo para selecionar escolas bilíngues e internacionais"
+    columns:
+      - name: CO_ENTIDADE
+        description: "Código identificador da entidade escolar."
+        data_type: "string"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: NO_ENTIDADE
+        description: "Nome da entidade escolar."
+        data_type: "string"
+
+      - name: NO_MUNICIPIO
+        description: "Nome do município onde a escola está localizada."
+        data_type: "string"
+
+      - name: NO_UF
+        description: "Unidade Federativa (UF) do estado onde a escola está localizada."
+        data_type: "string"
+
+      - name: TP_SITUACAO_FUNCIONAMENTO
+        description: "Tipo de situação de funcionamento da escola."
+        data_type: "string"
+
+      - name: TP_DEPENDENCIA
+        description: "Tipo de dependência administrativa da escola (e.g., federal, estadual, municipal, privada)."
+        data_type: "string"
+
+      - name: NU_ANO_CENSO
+        description: "Ano de referência do censo escolar."
+        data_type: "string"
+
+      - name: QT_MAT_BAS
+        description: "Quantidade de matrículas na educação básica."
+        data_type: "int"
+
+      - name: QT_MAT_INF
+        description: "Quantidade de matrículas na educação infantil."
+        data_type: "int"
+
+      - name: QT_MAT_FUND_AI
+        description: "Quantidade de matrículas no ensino fundamental (anos iniciais)."
+        data_type: "int"
+
+      - name: QT_MAT_FUND_AF
+        description: "Quantidade de matrículas no ensino fundamental (anos finais)."
+        data_type: "int"
+
+      - name: QT_MAT_MED
+        description: "Quantidade de matrículas no ensino médio."
+        data_type: "int"
+
+  - name: slv_cubo_33
+    description: "Visualização que contém dados sobre pedidos e clientes filtrados para o ano de utilização 2024 e aplicável aos alunos."
+
+  - name: brz_parceiros_segmentados
+    description: "Parceiros CRM com a nova classificação do perfil de escola"
