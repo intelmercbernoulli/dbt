@@ -1,0 +1,65 @@
+
+version: 2
+
+models:
+  - name: slv_escolas_bilingue
+    description: "Modelo para selecionar escolas bilíngues e internacionais"
+    columns:
+      - name: CO_ENTIDADE
+        description: "Código identificador da entidade escolar."
+        data_type: "string"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: NO_ENTIDADE
+        description: "Nome da entidade escolar."
+        data_type: "string"
+
+      - name: NO_MUNICIPIO
+        description: "Nome do município onde a escola está localizada."
+        data_type: "string"
+
+      - name: NO_UF
+        description: "Unidade Federativa (UF) do estado onde a escola está localizada."
+        data_type: "string"
+
+      - name: TP_SITUACAO_FUNCIONAMENTO
+        description: "Tipo de situação de funcionamento da escola."
+        data_type: "string"
+
+      - name: TP_DEPENDENCIA
+        description: "Tipo de dependência administrativa da escola (e.g., federal, estadual, municipal, privada)."
+        data_type: "string"
+
+      - name: NU_ANO_CENSO
+        description: "Ano de referência do censo escolar."
+        data_type: "string"
+
+      - name: QT_MAT_BAS
+        description: "Quantidade de matrículas na educação básica."
+        data_type: "int"
+
+      - name: QT_MAT_INF
+        description: "Quantidade de matrículas na educação infantil."
+        data_type: "int"
+
+      - name: QT_MAT_FUND_AI
+        description: "Quantidade de matrículas no ensino fundamental (anos iniciais)."
+        data_type: "int"
+
+      - name: QT_MAT_FUND_AF
+        description: "Quantidade de matrículas no ensino fundamental (anos finais)."
+        data_type: "int"
+
+      - name: QT_MAT_MED
+        description: "Quantidade de matrículas no ensino médio."
+        data_type: "int"
+  - name: slv_cubo33
+    description: "Visualização que contém dados sobre pedidos e clientes filtrados para o ano de utilização 2024 e aplicável aos alunos."
+  - name: slv_parceiros_novo_perfil
+    description: "Parceiros com a nova segmentação 2025."
+  - name: slv_cubo33_filtrado_2024
+    description: "Tabela do cubo_33 com filtro 2024, Aluno, 2.1.48, 2.2.76, 2.1.04, Acerto de NF, Adicional, D, Tiragem."
+  - name: slv_cubo33_filtrado_2025
+    description: "Tabela do cubo_33 com filtro 2025, Aluno, 2.1.48, 2.2.76, 2.1.04, Acerto de NF, Adicional, D, Tiragem."

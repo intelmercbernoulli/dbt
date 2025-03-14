@@ -1,0 +1,27 @@
+
+version: 2
+
+sources:
+  - name: intel_merc  # Nome da *source* simplificado e exclusivo
+    database: DB_DLK_INTMERCDB  # Nome do banco de dados onde a tabela está localizada
+    schema: dbo  # Nome do esquema
+    tables:
+      - name: bi_venda_colecao_rm
+      - name: brz_segmentacao_escolas
+      - name: slv_empresas
+      - name: Premio_Expurgos_Dim
+      - name: brz_categorizacao_produtos
+      - name: slv_escolas_segmentadas
+      - name: brz_enem_escolas
+        description: "Nota ENEM das escolas"
+      - name: brz_censo_inep_escolas_maior_ano
+        description: "Censo INEP com o último ano de todas as escolas."
+      - name: brz_censo_inep_particulares_todos_anos
+        description: "Censo INEP com as escolas particulares de 2015 a 2023"
+      - name: brz_censo_inep_particulares_filtrado_ultimos_anos
+        description: "Censo INEP com as escolas particulares de 2019 a 2023 mas filtrando escolas privadas, ativas e regular ('TP_DEPENDENCIA'='4', 'TP_SITUACAO_FUNCIONAMENTO' = '1', 'IN_REGULAR' = '1') e retirando as escolas que tem os seguintes nomes: 'APAE', 'SENAC', 'SENAI', 'SEBRAE', 'APAC', 'ESPECIAL', 'PROFISSIONAL', 'PROFISSIONALIZANTE', 'MUSICA', 'BALET', 'BALLET', 'ENFERMAGEM', 'SAUDE', 'TECNICO', 'TECNICA', 'ESPECIALIZADO', 'ESPECIALIZADA', 'ESPECIALIZACAO', 'ATENDIMENTO', 'CRUZ VERMELHA', 'CETEC', 'AGRICOLA', 'PESTALLOZI', 'EXCEPCIONAL' ,'EXCEPCIONAIS','CR P CONV', 'ASSOCIACAO', 'CEI INDIR', 'ASSISTENCIAL','ASSISTENCIA', 'ASSOC', 'CONV -' "
+      - name: brz_bivendacolecao
+
+models:
+  - name: brz_parceiros_segmentados
+    description: "Parceiros CRM com a nova classificação do perfil de escola"

@@ -1,0 +1,40 @@
+
+version: 2
+
+models:
+  - name: gld_cubo33_2024
+    description: "Pedidos e clientes filtrados para o ano de utilização 2024."
+  - name: gld_cubo33_alunado
+    description: "Número de alunos por escola."
+  - name: gld_cubo33_2024_alunado
+    description: "Número de alunos por escola em 2024."
+  - name: gld_cubo33_empresas
+    description: "Tabela do cubo_33 mas com as novas segmentações das escolas."
+  - name: gld_cubo33_2024_tkm
+    description: "Tabela pronta para fazer Ticket Médio."
+  - name: gld_parceiros_alunado_rm
+    description: "Escolas parceiras CRM com alunos do RM."
+  - name: gld_cubo33_2025_alunado
+    description: "Número de alunos por escola em 2025."
+  - name: gld_cubo33_2024_alunos_produto
+    description: "Número de alunos por produtos em 2024."
+  - name: gld_cubo33_2023_alunos_produto
+    description: "Número de alunos por produtos em 2023."
+  - name: gld_cubo33_2022_alunos_produto
+    description: "Número de alunos por produtos em 2022."
+  - name: gld_cubo33_2024_alunos_todos_produtos
+    description: "Número de alunos por todos os produtos em 2024 considerando Inglês, Filosofia..."
+  - name: gld_cubo33_2024_faturamento_produto
+    description: "Faturamento por produto em 2024"
+  - name: gld_cubo33_2023_faturamento_produto
+    description: "Faturamento por produto em 2023"
+  - name: gld_downselling_23_24_produto_faturamento
+    description: "Base para cálculo de dowselling de faturamento por produto."
+  - name: gld_downselling_23_24_produto_faturamento_resultado
+    description: "Resultado cálculo de dowselling de faturamento por produto."
+  - name: gld_cubo33_2024_alunos_todos_produtos_perfil
+    description: "Número de alunos por todos os produtos em 2024 considerando Inglês, Filosofia... com perfil da escola."
+  - name: gld_resultado_produtos_aluno_faturamento_2024
+    description : "Resultado final de alunos, escolas e faturamento por escola, segmento, série."
+  - name: gld_dec_vol_para_estimativa
+    description : "Decréscimo em percuntal por columas de cada produto para ser utilizado no modelo de estimativa."
