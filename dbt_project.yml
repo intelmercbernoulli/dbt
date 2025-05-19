@@ -14,8 +14,12 @@ models:
         -- Define o collation padrão para todas as operações
         COLLATE SQL_Latin1_General_CP1_CI_AS;
     bronze:
-      +materialized: table  # Bronze como tabela
+      +materialized: view  # Bronze como tabela
     silver:
       +materialized: view # Silver como view
     gold:
       +materialized: view # Gold como view
+      
+snapshots:
+  my_dbt_project:
+    +target_schema: snapshots
