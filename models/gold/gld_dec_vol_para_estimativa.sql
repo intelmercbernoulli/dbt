@@ -6,7 +6,12 @@ WITH PivotTable AS (
             [CATEGORIA PADRONIZADA], 
             CAST([VOLUME] AS NVARCHAR) AS [VOLUME], -- Garante compatibilidade com 'Único'
             [QUANTIDADE PEDIDO]
-        FROM  {{ ref('slv_cubo33_filtrado_2024') }} 
+        FROM  {{ ref('slv_cubo33_categorizado') }}
+        WHERE
+            [ANO DE UTILIZAÇÃO] = '2024'
+            AND [ALUNO/PROFESSOR] = 'Aluno'
+            AND CODTMV NOT IN ('2.1.48', '2.2.76', '2.1.04', '2.1.78')
+            AND [TIPO DE PEDIDO] IN ('Acerto de NF', 'Adicional', 'D', 'Tiragem') 
     ) AS SourceTable
     PIVOT (
         SUM([QUANTIDADE PEDIDO])

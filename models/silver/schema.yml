@@ -57,11 +57,6 @@ models:
         data_type: "int"
   - name: slv_cubo33
     description: "Visualização que contém dados sobre pedidos e clientes filtrados para o ano de utilização 2024 e aplicável aos alunos."
-  - name: slv_parceiros_novo_perfil
-    description: "Parceiros com a nova segmentação 2025."
-  - name: slv_cubo33_filtrado_2024
-    description: "Tabela do cubo_33 com filtro 2024, Aluno, 2.1.48, 2.2.76, 2.1.04, Acerto de NF, Adicional, D, Tiragem."
-  - name: slv_cubo33_filtrado_2025
-    description: "Tabela do cubo_33 com filtro 2025, Aluno, 2.1.48, 2.2.76, 2.1.04, Acerto de NF, Adicional, D, Tiragem."
   - name: slv_grupo_colecao
   - name: slv_empresas_crm
+  - name: slv_cubo33_ajustado

@@ -8,21 +8,9 @@ models:
     description: "Número de alunos por escola."
   - name: gld_cubo33_2024_alunado
     description: "Número de alunos por escola em 2024."
-  - name: gld_cubo33_empresas
-    description: "Tabela do cubo_33 mas com as novas segmentações das escolas."
   - name: gld_cubo33_2024_tkm
     description: "Tabela pronta para fazer Ticket Médio."
-  - name: gld_parceiros_alunado_rm
-    description: "Escolas parceiras CRM com alunos do RM."
-  - name: gld_cubo33_2025_alunado
-    description: "Número de alunos por escola em 2025."
-  - name: gld_cubo33_2024_alunos_produto
-    description: "Número de alunos por produtos em 2024."
-  - name: gld_cubo33_2023_alunos_produto
-    description: "Número de alunos por produtos em 2023."
-  - name: gld_cubo33_2022_alunos_produto
-    description: "Número de alunos por produtos em 2022."
-  - name: gld_cubo33_2024_alunos_todos_produtos
+  - name: gld_2024_alunos_todos_produtos
     description: "Número de alunos por todos os produtos em 2024 considerando Inglês, Filosofia..."
   - name: gld_cubo33_2024_faturamento_produto
     description: "Faturamento por produto em 2024"

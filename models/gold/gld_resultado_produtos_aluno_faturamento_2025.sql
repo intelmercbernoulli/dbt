@@ -10,7 +10,7 @@ WITH alunos AS (
         TRIM([GRUPO COLEÇÃO]) AS [GRUPO COLEÇÃO],
         [CATEGORIA PADRONIZADA],
         SUM([QUANTIDADE PEDIDO]) AS ALUNOS
-    FROM {{ ref('slv_cubo33') }}
+    FROM {{ ref('slv_cubo33_categorizado') }}
     WHERE
         ([ANO DE UTILIZAÇÃO] = '2025'
         AND [ALUNO/PROFESSOR] = 'Aluno'
@@ -49,7 +49,7 @@ faturamento AS (
         SUM(CAST([FATURAMENTO SEM DESCONTO] AS NUMERIC(18, 2))) AS [FATURAMENTO_BRUTO],
         SUM(CAST([RECEITA] AS NUMERIC(18, 2))) AS [FATURAMENTO_LIQUIDO],
         SUM(CAST([VALOR TOTAL DESCONTO] AS NUMERIC(18, 2))) AS [VALOR_TOTAL_DESCONTO]
-    FROM {{ ref('slv_cubo33') }}
+    FROM {{ ref('slv_cubo33_categorizado') }}
     WHERE
         [ANO DE UTILIZAÇÃO] = '2025'
         AND CODTMV NOT IN ('2.1.48', '2.2.76', '2.1.04')
