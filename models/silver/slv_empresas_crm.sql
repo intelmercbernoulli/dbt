@@ -1,4 +1,6 @@
-SELECT *, 
+SELECT *,
+RIGHT('000000' + LEFT(CAST([Código RM] AS VARCHAR), CHARINDEX('.', CAST([Código RM] AS VARCHAR) + '.') - 1), 6) AS [Cod RM Ajustado],
+RIGHT('000000' + LEFT(CAST([Código 1] AS VARCHAR), CHARINDEX('.', CAST([Código 1] AS VARCHAR) + '.') - 1), 6) AS [Cod RM 1 Ajustado],
 CASE 
     WHEN [Estado] = 'Pará' THEN 'PA'
     WHEN [Estado] = 'Paraíba' THEN 'PB'

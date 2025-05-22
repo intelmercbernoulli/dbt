@@ -7,3 +7,5 @@ CASE
 END AS [Escola Mapeada]
 FROM
 {{ ref ('slv_empresas_crm') }}
+WHERE [Escola em Serviço?] IS NOT NULL
+  AND [Escola em Serviço?] <> 'Não'
