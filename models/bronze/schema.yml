@@ -23,11 +23,15 @@ sources:
       - name: brz_bivendacolecao
       - name: brz_mapa_de_risco
       - name: brz_perguntas_mapa_de_risco
+      - name: brz_registro_de_atendimento
+      - name: brz_vendas_historico
+      - name: brz_estimativas
   - name: dm_ope  # Nome da *source* simplificado e exclusivo
     database: DB_DM_OPE  # Nome do banco de dados onde a tabela está localizada
     schema: dbo  # Nome do esquema
     tables:
       - name: BI_VENDACOLECAO
+
 models:
   - name: brz_parceiros_segmentados
     description: "Parceiros CRM com a nova classificação do perfil de escola"

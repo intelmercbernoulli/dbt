@@ -42,3 +42,5 @@ models:
   - name : gld_perguntas_mapa_de_risco
   - name : gld_empresas_matriz_e_risco
   - name : gld_2025_faturamento_escola
+  - name : gld_registro_de_atendimento_detalhado
+  - name : gld registro_de_atendimento

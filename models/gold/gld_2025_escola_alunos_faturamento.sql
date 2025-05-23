@@ -23,58 +23,25 @@ alunos AS (
     GROUP BY [CÓDIGO DO CLIENTE], [NOME DO CLIENTE], [REDE DE ENSINO], [CIDADE], [UF]
 ),
 
-faturamento_base AS (
-    SELECT *
-    FROM {{ ref('slv_cubo33_categorizado') }}
-    WHERE 
-        [ANO DE UTILIZAÇÃO] = '2025'
-        AND CODTMV NOT IN ('2.1.48', '2.2.76', '2.1.04')
-        AND [TIPO DE PEDIDO] IN ('Acerto de NF', 'Adicional', 'D', 'Tiragem')
+faturamento AS (
+    SELECT
+        [CODIGO_AJUSTADO],
+        SUM([Receita Bruta Total]) AS [Receita Bruta Total],
+        SUM([Receita Líquida Total]) AS [Receita Líquida Total]
+    FROM {{ source('intel_merc', 'brz_estimativas') }}
+    GROUP BY [CODIGO_AJUSTADO]
 ),
 
 segmentos AS (
-    SELECT 
-        [CÓDIGO DO CLIENTE],
-        STRING_AGG([SEGMENTO], ', ') AS SEGMENTOS
-    FROM (
-        SELECT DISTINCT [CÓDIGO DO CLIENTE], [SEGMENTO]
-        FROM faturamento_base
-        WHERE [SEGMENTO] NOT IN ('PLANEJAMENTO DIÁRIO')
-    ) AS sub
-    GROUP BY [CÓDIGO DO CLIENTE]
-),
-
-faturamento AS (
-    SELECT 
-        c.[CÓDIGO DO CLIENTE],
-        SUM(c.[FATURAMENTO SEM DESCONTO]) AS [FATURAMENTO SEM DESCONTO],
-        SUM(c.[RECEITA]) AS [RECEITA],
-        SUM(c.[VALOR TOTAL DESCONTO]) AS [VALOR TOTAL DESCONTO],
-        s.SEGMENTOS
-    FROM faturamento_base c
-    LEFT JOIN segmentos s
-        ON c.[CÓDIGO DO CLIENTE] = s.[CÓDIGO DO CLIENTE]
-    GROUP BY c.[CÓDIGO DO CLIENTE], s.SEGMENTOS
+    SELECT *
+    FROM {{ ref('slv_segmentos_dos_clientes') }}
 ),
 
 empresas_unificadas AS (
-    SELECT 
-        [CÓDIGO DO CLIENTE],
-        MAX([Quantidade Total de Alunos]) AS [Quantidade Total de Alunos]
-    FROM (
-        SELECT 
-            [Cod RM Ajustado] COLLATE SQL_Latin1_General_CP1_CI_AI AS [CÓDIGO DO CLIENTE],
-            [Quantidade Total de Alunos]
-        FROM {{ ref('slv_empresas_crm') }}
-        
-        UNION ALL
-
-        SELECT 
-            [Cod RM 1 Ajustado] COLLATE SQL_Latin1_General_CP1_CI_AI AS [CÓDIGO DO CLIENTE],
-            [Quantidade Total de Alunos]
-        FROM {{ ref('slv_empresas_crm') }}
-    ) base
-    GROUP BY [CÓDIGO DO CLIENTE]
+    SELECT
+        COALESCE([Cod RM Ajustado], [Cod RM 1 Ajustado]) AS codigo_base,
+        [Quantidade Total de Alunos]
+    FROM {{ ref('slv_empresas_crm') }}
 )
 
 SELECT 
@@ -83,23 +50,24 @@ SELECT
     a.[REDE DE ENSINO],
     a.[CIDADE],
     a.[UF],
-    a.ALUNOS [Alunos que Compram],
-    e.[Quantidade Total de Alunos] [Total de Alunos],
-    f.[FATURAMENTO SEM DESCONTO],
-    f.[RECEITA],
-    f.[SEGMENTOS],
-    f.[FATURAMENTO SEM DESCONTO] - f.[RECEITA] AS [DESCONTO],
+    s.[SEGMENTOS],
+    a.ALUNOS AS [Alunos que Compram],
+    e.[Quantidade Total de Alunos] AS [Total de Alunos],
+    f.[Receita Bruta Total],
+    f.[Receita Líquida Total],
+    f.[Receita Bruta Total] - f.[Receita Líquida Total] AS [Benefícios Concedidos],
     CASE 
-        WHEN f.[FATURAMENTO SEM DESCONTO] = 0 THEN NULL
-        ELSE (f.[FATURAMENTO SEM DESCONTO] - f.[RECEITA]) / f.[FATURAMENTO SEM DESCONTO]
-    END AS [% DESCONTO],
+        WHEN f.[Receita Bruta Total] = 0 THEN NULL
+        ELSE (f.[Receita Bruta Total] - f.[Receita Líquida Total]) / f.[Receita Bruta Total]
+    END AS [% Benefícios Concedidos],
     CASE 
         WHEN a.ALUNOS = 0 THEN NULL
-        ELSE f.[RECEITA] / a.ALUNOS
+        ELSE f.[Receita Líquida Total] / a.ALUNOS
     END AS [Ticket Médio]
-    
 FROM alunos a
 LEFT JOIN faturamento f
-    ON a.[CÓDIGO DO CLIENTE] = f.[CÓDIGO DO CLIENTE]
+    ON a.[CÓDIGO DO CLIENTE] = f.[CODIGO_AJUSTADO]
+LEFT JOIN segmentos s
+    ON a.[CÓDIGO DO CLIENTE] = s.[CÓDIGO DO CLIENTE]
 LEFT JOIN empresas_unificadas e
-    ON a.[CÓDIGO DO CLIENTE] COLLATE SQL_Latin1_General_CP1_CI_AI = e.[CÓDIGO DO CLIENTE]
+    ON a.[CÓDIGO DO CLIENTE] COLLATE SQL_Latin1_General_CP1_CI_AI = e.codigo_base COLLATE SQL_Latin1_General_CP1_CI_AI
