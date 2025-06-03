@@ -59,5 +59,4 @@ models:
     description: "Visualização que contém dados sobre pedidos e clientes filtrados para o ano de utilização 2024 e aplicável aos alunos."
   - name: slv_grupo_colecao
   - name: slv_empresas_crm
-  - name: slv_cubo33_ajustado
   - name: slv_segmentos_dos_clientes
