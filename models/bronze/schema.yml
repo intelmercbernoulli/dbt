@@ -28,6 +28,7 @@ sources:
       - name: brz_estimativas
       - name: brz_vendacolecao_rm
       - name: brz_cubo33
+      - name: brz_censo_inep_2024
         description: "Cópia do cubo 33 do banco de operações."
   - name: dm_ope  # Nome da *source* simplificado e exclusivo
     database: DB_DM_OPE  # Nome do banco de dados onde a tabela está localizada

@@ -46,5 +46,4 @@ SELECT
 FROM crm c 
 LEFT JOIN rm r
     ON c.[Cod RM Ajustado] COLLATE SQL_Latin1_General_CP1_CI_AI = r.[CÓDIGO DO CLIENTE] COLLATE SQL_Latin1_General_CP1_CI_AI
-    OR c.[Cod RM 1 Ajustado] COLLATE SQL_Latin1_General_CP1_CI_AI = r.[CÓDIGO DO CLIENTE] COLLATE SQL_Latin1_General_CP1_CI_AI
     -- Ver código rm 1 e ver os casos das duplicadas
