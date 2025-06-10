@@ -60,3 +60,4 @@ models:
   - name: slv_grupo_colecao
   - name: slv_empresas_crm
   - name: slv_segmentos_dos_clientes
+  - name: slv_empresas_blindadas
