@@ -35,3 +35,4 @@ models:
   - name : gld_registro_de_atendimento
   - name : gld_empresas_crm_alunos_faturamento_2025
   - name : gld_2025_escola_faturamento_alunos
+  - name : gld_escolas_faturamento_alunos

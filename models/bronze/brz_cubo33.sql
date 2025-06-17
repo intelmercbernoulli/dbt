@@ -1,2 +1,2 @@
 SELECT *
-FROM {{ source('dm_ope', 'BI_VENDACOLECAO') }}
+FROM {{ source('intel_merc', 'brz_vendacolecao_rm') }}

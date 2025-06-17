@@ -1,6 +1,6 @@
 with base as (
     select *
-    from {{ source('dm_ope', 'BI_VENDACOLECAO') }}
+    from {{ source('intel_merc', 'brz_vendacolecao_rm') }}
 ),
 
 filtrados as (
