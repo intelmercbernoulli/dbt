@@ -1,0 +1,25 @@
+SELECT [id_account]
+      ,[activityid]
+      ,[Assunto Relacionado]
+      ,[Criado por]
+      ,[Data de Criação]
+      ,[Data do Cancelamento]
+      ,[Duração]
+      ,[Hora de Início]
+      ,[Hora de Término]
+      ,[Número do Atendimento]
+      ,[O Dia Inteiro]
+      ,[Participantes BSE]
+      ,[Prioridade]
+      ,[Produto Relacionado]
+      ,[Público Alvo]
+      ,[Responsável pelo Atendimento]
+      ,[Setor Relacionado]
+      ,[Status do Atendimento]
+      ,[Tipo de Atendimento]
+      ,[Tipo de Contato]
+      ,DATEDIFF(DAY, 
+         CAST(CONVERT(DATETIME, [Data de Criação], 103) AS DATE),
+         CAST(CONVERT(DATETIME, [Hora de Início], 103) AS DATE)) AS [Dias entre data de criação e visita]
+  FROM {{ source ('intel_merc', 'brz_registro_de_atendimento') }}
+  WHERE [Tipo de Contato] = 'Visita Presencial' AND [Setor Relacionado] = 'Comercial - BSE'

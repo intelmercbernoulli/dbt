@@ -62,3 +62,7 @@ models:
   - name: slv_segmentos_dos_clientes
   - name: slv_empresas_blindadas
   - name: slv_censo_inep_media
+    description: Base de escolas com a média de alunos por segmento para o dashboard de Inteligência de Mercado e Paper de Mercado.
+  - name: slv_auditoria_de_visitas
+  - name: slv_auditoria_escola_sem_consultor
+  - name: slv_censo_inep_2024_publica_privada
