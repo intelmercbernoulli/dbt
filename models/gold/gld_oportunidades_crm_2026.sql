@@ -1,5 +1,3 @@
-SELECT 
-*,
-[Id Oportunidade] AS id_oportunidade
-FROM   {{ source('intel_merc', 'brz_oportunidades') }}
+SELECT *
+FROM {{ ref('slv_oportunidades_crm') }}
 WHERE [Ano de Utilização] = '2.026'

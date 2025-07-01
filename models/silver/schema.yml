@@ -56,7 +56,7 @@ models:
         description: "Quantidade de matrículas no ensino médio."
         data_type: "int"
   - name: slv_cubo33
-    description: "Visualização que contém dados sobre pedidos e clientes filtrados para o ano de utilização 2024 e aplicável aos alunos."
+    description: "Tabela de pedidos corrigindo o formato de pedido da escola WR."
   - name: slv_grupo_colecao
   - name: slv_empresas_crm
   - name: slv_segmentos_dos_clientes
@@ -64,5 +64,9 @@ models:
   - name: slv_censo_inep_media
     description: Base de escolas com a média de alunos por segmento para o dashboard de Inteligência de Mercado e Paper de Mercado.
   - name: slv_auditoria_de_visitas
+    description: Tabela de visistas para o time de auditoria acompanhar datas de criação e da visita.
   - name: slv_auditoria_escola_sem_consultor
+    description: Escolas que estão sem consultor para conferência pela auditoria.
   - name: slv_censo_inep_2024_publica_privada
+    description: Base criada para o dashboard do Paper de Mercado.
+  - name: slv_oportunidades_crm

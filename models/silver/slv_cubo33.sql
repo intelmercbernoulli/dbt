@@ -1,6 +1,7 @@
 with base as (
     select *
-    from {{ source('intel_merc', 'brz_vendacolecao_rm') }}
+    --from {{ source('intel_merc', 'brz_vendacolecao_rm') }}
+    from {{ ref('brz_cubo33') }}
 ),
 
 filtrados as (

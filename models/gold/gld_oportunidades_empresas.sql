@@ -1,6 +1,6 @@
 with oportunidades as (
     select * 
-    from {{ source('intel_merc', 'brz_oportunidades') }}
+    from {{ ref('slv_oportunidades_crm') }}
 ),
 
 empresas as (

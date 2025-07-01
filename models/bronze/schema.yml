@@ -29,3 +29,8 @@ sources:
       - name: brz_vendacolecao_rm
       - name: brz_censo_inep_2024
         description: "Cópia do cubo 33 do banco de operações."
+  - name: operacoes
+    database: DB_DM_OPE
+    schema: dbo
+    tables: 
+      - name: BI_VENDACOLECAO
