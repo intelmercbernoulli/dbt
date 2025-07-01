@@ -4,63 +4,15 @@ version: 2
 models:
   - name: slv_escolas_bilingue
     description: "Modelo para selecionar escolas bilíngues e internacionais"
-    columns:
-      - name: CO_ENTIDADE
-        description: "Código identificador da entidade escolar."
-        data_type: "string"
-        data_tests:
-          - unique
-          - not_null
-
-      - name: NO_ENTIDADE
-        description: "Nome da entidade escolar."
-        data_type: "string"
-
-      - name: NO_MUNICIPIO
-        description: "Nome do município onde a escola está localizada."
-        data_type: "string"
-
-      - name: NO_UF
-        description: "Unidade Federativa (UF) do estado onde a escola está localizada."
-        data_type: "string"
-
-      - name: TP_SITUACAO_FUNCIONAMENTO
-        description: "Tipo de situação de funcionamento da escola."
-        data_type: "string"
-
-      - name: TP_DEPENDENCIA
-        description: "Tipo de dependência administrativa da escola (e.g., federal, estadual, municipal, privada)."
-        data_type: "string"
-
-      - name: NU_ANO_CENSO
-        description: "Ano de referência do censo escolar."
-        data_type: "string"
-
-      - name: QT_MAT_BAS
-        description: "Quantidade de matrículas na educação básica."
-        data_type: "int"
-
-      - name: QT_MAT_INF
-        description: "Quantidade de matrículas na educação infantil."
-        data_type: "int"
-
-      - name: QT_MAT_FUND_AI
-        description: "Quantidade de matrículas no ensino fundamental (anos iniciais)."
-        data_type: "int"
-
-      - name: QT_MAT_FUND_AF
-        description: "Quantidade de matrículas no ensino fundamental (anos finais)."
-        data_type: "int"
-
-      - name: QT_MAT_MED
-        description: "Quantidade de matrículas no ensino médio."
-        data_type: "int"
   - name: slv_cubo33
     description: "Tabela de pedidos corrigindo o formato de pedido da escola WR."
   - name: slv_grupo_colecao
   - name: slv_empresas_crm
+    description: Empresas do CRM com seus respectivos ajustes no tipo de dado.
   - name: slv_segmentos_dos_clientes
+    description: escolas do CRM com seus respectivos segmentos.
   - name: slv_empresas_blindadas
+    description: Empresas blindadas no cm.
   - name: slv_censo_inep_media
     description: Base de escolas com a média de alunos por segmento para o dashboard de Inteligência de Mercado e Paper de Mercado.
   - name: slv_auditoria_de_visitas
@@ -70,3 +22,6 @@ models:
   - name: slv_censo_inep_2024_publica_privada
     description: Base criada para o dashboard do Paper de Mercado.
   - name: slv_oportunidades_crm
+    description: Oportunidades do CRM pronta para uso com correção do tipo de dado.
+  - name: slv_censo_2024_latlong_inep
+    description: Base do INEP enriquecida com latitude e longitude, utilizado no dashboard paper de mercado.

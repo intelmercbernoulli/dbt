@@ -1,0 +1,55 @@
+SELECT 
+    a.[NU_ANO_CENSO],
+    a.[CO_ENTIDADE],
+    a.[NO_ENTIDADE],
+    a.[DS_ENDERECO],
+    a.[NO_BAIRRO],
+    a.[NU_ENDERECO],
+    a.[DS_COMPLEMENTO],
+    a.[CO_CEP],
+    a.[NO_MUNICIPIO],
+    a.[CO_MUNICIPIO],
+    a.[CO_DISTRITO],
+    a.[NO_REGIAO],
+    a.[NO_UF],
+    a.[SG_UF],
+    a.[TP_DEPENDENCIA],
+    a.[TP_SITUACAO_FUNCIONAMENTO],
+    a.[TP_CATEGORIA_ESCOLA_PRIVADA],
+    a.[IN_REGULAR],
+    a.[QT_MAT_BAS],
+    a.[QT_MAT_INF],
+    a.[QT_MAT_FUND_AI],
+    a.[QT_MAT_FUND_AF],
+    a.[QT_MAT_MED],
+    a.[QT_MAT_FUND_AI_1],
+    a.[QT_MAT_FUND_AI_2],
+    a.[QT_MAT_FUND_AI_3],
+    a.[QT_MAT_FUND_AI_4],
+    a.[QT_MAT_FUND_AI_5],
+    a.[QT_MAT_FUND_AF_6],
+    a.[QT_MAT_FUND_AF_7],
+    a.[QT_MAT_FUND_AF_8],
+    a.[QT_MAT_FUND_AF_9],
+    a.[QT_MAT_MED_PROP_1],
+    a.[QT_MAT_MED_PROP_2],
+    a.[QT_MAT_MED_PROP_3],
+    a.[QT_MAT_MED_PROP_4],
+    a.[QT_MAT_MED_PROP_NS],
+    a.[QT_TUR_BAS],
+    a.[QT_TUR_INF],
+    a.[QT_TUR_FUND_AI],
+    a.[QT_TUR_FUND_AF],
+    a.[QT_TUR_MED],
+    b.[endereco_completo],
+    b.[endereco_simplificado],
+    b.[Latitude],
+    b.[Longitude]
+
+FROM 
+    {{ source('intel_merc', 'brz_censo_inep_2024') }} a
+LEFT JOIN 
+    {{ source('intel_merc', 'brz_censo_2024_latlong_inep') }} b
+    ON a.[CO_ENTIDADE] = b.[CO_ENTIDADE]
+WHERE 
+    a.[TP_DEPENDENCIA] = '4'
