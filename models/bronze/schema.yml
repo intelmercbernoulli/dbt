@@ -28,7 +28,6 @@ sources:
       - name: brz_estimativas
       - name: brz_vendacolecao_rm
       - name: brz_censo_inep_2024
-        description: "Cópia do cubo 33 do banco de operações."
       - name: brz_censo_2024_latlong_inep
   - name: operacoes
     database: DB_DM_OPE

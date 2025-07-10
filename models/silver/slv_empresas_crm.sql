@@ -32,6 +32,10 @@ CASE
     WHEN [Estado] = 'Roraima' THEN 'RR'
     WHEN [Estado] = 'Rio Grande do Norte' THEN 'RN'
     ELSE '-'  -- Caso algum estado não esteja mapeado
-END AS [UF]
+END AS [UF],
+CASE 
+    WHEN [Rede de Ensino] IS NULL THEN 'Sem Rede'
+    ELSE [Rede de Ensino] 
+END AS [Rede]
 FROM
 {{ source ('intel_merc', 'brz_empresas') }}

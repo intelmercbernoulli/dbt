@@ -37,3 +37,7 @@ models:
   - name : gld_2025_escola_faturamento_alunos
   - name : gld_escolas_faturamento_alunos
   - name : gld_escolas_alunos_colecao_principal_ano_atual
+  - name : gld_oportunidades_2026_crm
+    description : "Tabela de oportunidades de 2026 para o excel de simulação de descontos."
+  - name : gld_empresas_em_rescisao
+    desciption : "Escolas em processo de rescisão ou ex-clientes para o dashboard de rescisão."
