@@ -40,5 +40,6 @@ SELECT [accountid]
       ,[Data da Formalização]
       ,[Alunos Perdidos]
       ,[Estimativa de Faturamento]
+      ,[Material Perdido na Rescisão]
 FROM {{ source ('intel_merc', 'brz_empresas') }} --{{ ref('slv_empresas_crm') }}
 WHERE [Tipo de Relação] IN ('BSE - Em Processo de Rescisão','BSE - Ex-Cliente')
