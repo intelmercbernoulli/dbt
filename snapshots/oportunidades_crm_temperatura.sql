@@ -9,7 +9,7 @@
     }}
 
 SELECT
- id_oportunidade,
+  [Id Oportunidade] AS id_oportunidade,
  [Status da negociação] AS status_negociacao,
  [Fase da Venda] AS fase_venda,
  [Temperatura do Cliente - Comercial] AS temperatura
