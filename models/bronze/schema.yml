@@ -34,6 +34,11 @@ sources:
     schema: dbo
     tables: 
       - name: BI_VENDACOLECAO
+  - name: hom_corpore
+    database: SQL_DL_HOM_CORPORE
+    schema: dbo
+    tables:
+      - name: VW_BI_ESTIMATIVA
 
 models:
   - name: brz_cubo33
