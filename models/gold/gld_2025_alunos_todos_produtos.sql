@@ -32,7 +32,7 @@ WHERE
             OR [DESCRIÇÃO] LIKE '%SB%'))
     OR 
         ([ANO DE UTILIZAÇÃO] = '2025'
-        AND [GRUPO COLEÇÃO] = 'COLEÇÃO PRINCIPAL'
+        --AND [GRUPO COLEÇÃO] = 'COLEÇÃO PRINCIPAL'
         AND [ALUNO/PROFESSOR] = 'Aluno'
         AND CODTMV NOT IN ('2.1.48', '2.2.76', '2.1.04')
         AND [TIPO DE PEDIDO] IN ('Acerto de NF', 'Adicional', 'D', 'Tiragem')
