@@ -36,6 +36,15 @@ END AS [UF],
 CASE 
     WHEN [Rede de Ensino] IS NULL THEN 'Sem Rede'
     ELSE [Rede de Ensino] 
-END AS [Rede]
+END AS [Rede],
+CASE 
+    WHEN CAST([Quantidade Total de Alunos] AS INT) > 1000 THEN '> 1.000'
+    WHEN CAST([Quantidade Total de Alunos] AS INT) > 750 THEN '<= 1.000'
+    WHEN CAST([Quantidade Total de Alunos] AS INT) > 500 THEN '<= 750'
+    WHEN CAST([Quantidade Total de Alunos] AS INT) > 250 THEN '<= 500'
+    WHEN CAST([Quantidade Total de Alunos] AS INT) <= 250 THEN '<= 250'
+    ELSE '-'
+END AS [Porte]
 FROM
 {{ source ('intel_merc', 'brz_empresas') }}
+WHERE [Status] = 'Ativa'
