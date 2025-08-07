@@ -25,3 +25,6 @@ models:
     description: Oportunidades do CRM pronta para uso com correção do tipo de dado.
   - name: slv_censo_2024_latlong_inep
     description: Base do INEP enriquecida com latitude e longitude, utilizado no dashboard paper de mercado.
+  - name: slv_auditoria_novos_produtos_rm
+    descripition: Tabela de auditoria para conferir a criação de novos produtos que não foram alinhados 
+      e configurados na caregorização do produto.
