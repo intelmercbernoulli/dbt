@@ -39,6 +39,12 @@ sources:
     schema: dbo
     tables:
       - name: VW_BI_ESTIMATIVA
+      - name: VW_BASE_FATURAMENTO_PREMIO
+  - name: hom_corpore_prod
+    database: ERP_HOM_CORPORE
+    schema: dbo
+    tables:
+      - name: VW_BASE_FATURAMENTO_PREMIO
 
 models:
   - name: brz_cubo33

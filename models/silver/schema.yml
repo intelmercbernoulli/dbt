@@ -28,3 +28,5 @@ models:
   - name: slv_auditoria_novos_produtos_rm
     descripition: Tabela de auditoria para conferir a criação de novos produtos que não foram alinhados 
       e configurados na caregorização do produto.
+  - name: slv_cubo33_filtrado
+    descripition: Cubo 33 filtrando 'Aluno', CODTMV não seja ('2.1.48', '2.2.76', '2.1.04') e TIPO DE PEDIDO seja ('Acerto de NF', 'Adicional', 'D', 'Tiragem')

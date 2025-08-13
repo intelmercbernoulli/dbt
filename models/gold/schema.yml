@@ -41,3 +41,5 @@ models:
     description : "Tabela de oportunidades de 2026 para o excel de simulação de descontos."
   - name : gld_empresas_em_rescisao
     desciption : "Escolas em processo de rescisão ou ex-clientes para o dashboard de rescisão."
+  - name : gld_alunos_todos_produtos
+    description : "Tabela de escolas por alunos e produtos de todos os anos presentes no cubo 33."
