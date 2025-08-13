@@ -26,7 +26,6 @@ models:
     desription : "Oportunidades já com as informações das escolas."
   - name : gld_escolas_pv
     description :  "Lista de escolas que usam material Pré Vestibular em 2025"
-  - name : gld_escolas_pv_old
   - name : gld_mapa_de_risco
   - name : gld_perguntas_mapa_de_risco
   - name : gld_empresas_matriz_e_risco
