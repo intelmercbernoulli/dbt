@@ -38,13 +38,21 @@ CASE
     ELSE [Rede de Ensino] 
 END AS [Rede],
 CASE 
-    WHEN CAST([Quantidade Total de Alunos] AS INT) > 1000 THEN '> 1.000'
-    WHEN CAST([Quantidade Total de Alunos] AS INT) > 750 THEN '<= 1.000'
-    WHEN CAST([Quantidade Total de Alunos] AS INT) > 500 THEN '<= 750'
-    WHEN CAST([Quantidade Total de Alunos] AS INT) > 250 THEN '<= 500'
-    WHEN CAST([Quantidade Total de Alunos] AS INT) <= 250 THEN '<= 250'
+    WHEN CAST([Quantidade Total de Alunos] AS INT) > 1000 THEN 'e.> 1.000'
+    WHEN CAST([Quantidade Total de Alunos] AS INT) > 750 THEN 'd. <= 1.000'
+    WHEN CAST([Quantidade Total de Alunos] AS INT) > 500 THEN 'c. <= 750'
+    WHEN CAST([Quantidade Total de Alunos] AS INT) > 250 THEN 'b. <= 500'
+    WHEN CAST([Quantidade Total de Alunos] AS INT) <= 250 THEN 'a. <= 250'
     ELSE '-'
-END AS [Porte]
+END AS [Porte],
+CASE 
+    WHEN [Estado] IN ('Acre','Amapá','Amazonas','Pará','Rondônia','Roraima','Tocantins') THEN 'Norte'
+    WHEN [Estado] IN ('Alagoas','Bahia','Ceará','Maranhão','Paraíba','Pernambuco','Piaui','Rio Grande do Norte','Sergipe') THEN 'Nordeste'
+    WHEN [Estado] IN ('Distrito Federal','Goiás','Mato Grosso','Mato Grosso do Sul') THEN 'Centro-Oeste'
+    WHEN [Estado] IN ('Espírito Santo','Minas Gerais','Rio de Janeiro','São Paulo') THEN 'Sudeste'
+    WHEN [Estado] IN ('Paraná','Santa Catarina','Rio Grande do Sul') THEN 'Sul'
+    ELSE '-'
+END AS [Região]
 FROM
 {{ source ('intel_merc', 'brz_empresas') }}
 WHERE [Status] = 'Ativa'
