@@ -1,4 +1,4 @@
-SELECT 
+SELECT e."accountid",
       e."Nome Fantasia",
       e."Quantidade Total de Alunos",
       e."Rede de Ensino",
