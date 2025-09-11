@@ -192,8 +192,6 @@ models:
   - name: brz_cubo33
     description: "Base do cubo 33 vinda do banco de Operações."
   - name: brz_estimativa_cliente_rm
-    config:
-      enabled: false
   - name: brz_base_faturamento_premio
     config:
       enabled: false
