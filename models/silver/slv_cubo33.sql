@@ -1,6 +1,5 @@
 with base as (
     select *
-    --from {{ source('intel_merc', 'brz_vendacolecao_rm') }}
     from {{ ref('brz_cubo33') }}
 ),
 
@@ -13,9 +12,9 @@ filtrados as (
 
 somas as (
     select
-        sum(cast([FATURAMENTO SEM DESCONTO] as numeric(18, 2))) as [FATURAMENTO SEM DESCONTO],
-        sum(cast([RECEITA] as numeric(18, 2))) as [RECEITA],
-        sum(cast([VALOR TOTAL DESCONTO] as numeric(18, 2))) as [VALOR TOTAL DESCONTO]
+        sum(try_cast([FATURAMENTO SEM DESCONTO] as numeric(18, 2))) as [FATURAMENTO SEM DESCONTO],
+        sum(try_cast([RECEITA] as numeric(18, 2))) as [RECEITA],
+        sum(try_cast([VALOR TOTAL DESCONTO] as numeric(18, 2))) as [VALOR TOTAL DESCONTO]
     from filtrados
 ),
 
@@ -99,15 +98,81 @@ linha_ajustada as (
 ),
 
 outras_linhas as (
-    select *,
+    select
+        o.[ASSISTENTE],
+        o.[CÓDIGO DO CLIENTE],
+        o.[FAT. P/ ESCOLA OU LIVRARIA],
+        o.[CÓD. RM FATURAMENTO],
+        o.[NOME DO CLIENTE],
+        o.[CIDADE],
+        o.[UF],
+        o.[SOLICITAÇÃO CLIENTE],
+        o.[CÓDIGO PRODUTO],
+        o.[DESCRIÇÃO],
+        o.[COLEÇÃO],
+        o.[VOLUME],
+        o.[ANO],
+        o.[CATEGORIA],
+        o.[ALUNO/PROFESSOR],
+        o.[PROVA],
+        o.[PERNONALIZAÇÃO],
+        o.[TIPO DE PEDIDO],
+        o.[MOTIVO DEVOLUCAO],
+        o.[2º SEMESTRE],
+        o.[ANO DE UTILIZAÇÃO],
+        o.[CONDIÇÃO DE PGTO],
+        o.[TOTAL HISTÓRICO],
+        o.[TOTAL ATUAL],
+        o.[ID DO MOVIMENTO],
+        o.[N DO MOVIMENTO],
+        o.[STATUS],
+        o.[CODTMV],
+        o.[VALOR TABELA],
+        try_cast(o.[FATURAMENTO SEM DESCONTO] as numeric(18,2)) as [FATURAMENTO SEM DESCONTO],
+        try_cast(o.[RECEITA] as numeric(18,2)) as [RECEITA],
+        o.[RECEITA2],
+        o.[% DESC GERAL],
+        try_cast(o.[VALOR TOTAL DESCONTO] as numeric(18,2)) as [VALOR TOTAL DESCONTO],
+        o.[N/NR E OR],
+        o.[QUANTIDADE PEDIDO],
+        o.[DATA DA CONFIRMAÇÃO DO CLIENTE],
+        o.[DATA DE CRIAÇÃO],
+        o.[DATA DE APROVAÇÃO],
+        o.[MÊS],
+        o.[CRIADO POR],
+        o.[APROVAÇÃO],
+        o.[CODCOLIGADA],
+        o.[DATA DE APLICAÇÃO],
+        o.[DISPONIBILIZAÇÃO],
+        o.[DATA BASE VENCIMENTO],
+        o.[VALORFRETE],
+        o.[TIPO FRETE],
+        o.[UNIDADE ATENDIMENTO],
+        o.[REDE DE ENSINO],
+        o.[ID FAT],
+        o.[IDMOV],
+        o.[CODFILIAL],
+        o.[NUMERO DA NOTA FISCAL],
+        o.[DESCONTOITEM],
+        o.[DESCMOVRAT],
+        o.[CODTMVULTFAT],
+        o.[IDMOVULTFAT],
+        o.[VALORLIQUIDOULTFAT],
+        o.[NUMERO DA NOTA FISCAL DA REMESSA],
+        o.[PEDIDO SYDLE],
+        o.[PERCENTUAL DESCONTO ITEM],
+        o.[IDENTIFICADOR DA REMESSA],
+        o.[AGRUPAMENTO_CLIENTE],
+        o.[NOME_AGRUPAMENTO],
+        o.[CARGA],
         'NORMAL' as TIPO_REGISTRO
-    from base
+    from base o
     where not (
-        [CÓDIGO DO CLIENTE] = '078646'
-        and [CÓDIGO PRODUTO] = '25.46117.00117'
+        o.[CÓDIGO DO CLIENTE] = '078646'
+        and o.[CÓDIGO PRODUTO] = '25.46117.00117'
     )
 )
 
 select * from outras_linhas
 union all
-select * from linha_ajustada
+select * from linha_ajustada;
