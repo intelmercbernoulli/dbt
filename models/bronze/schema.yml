@@ -168,6 +168,7 @@ sources:
       - name: brz_estimativas
       - name: brz_vendacolecao_rm
       - name: brz_censo_inep_2024
+      - name: brz_enem_2024
       - name: brz_censo_2024_latlong_inep
       - name : brz_base_cep
         description : "Tabela de CEP do Brasil."
