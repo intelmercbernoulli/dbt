@@ -42,3 +42,7 @@ models:
     desciption : "Escolas em processo de rescisão ou ex-clientes para o dashboard de rescisão."
   - name : gld_alunos_todos_produtos
     description : "Tabela de escolas por alunos e produtos de todos os anos presentes no cubo 33."
+  - name : gld_escolas_faturamento_alunos
+    desciption : "Tabela dos alunos e faturamentos de todos os anos das escolas."
+  - name : gld_escolas_faturamento_alunos_maior_ano.
+    desciption : "Tabela dos alunos e faturamentos do último ano da escola."

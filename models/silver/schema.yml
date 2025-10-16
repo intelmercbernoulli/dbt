@@ -34,3 +34,5 @@ models:
     description: Tabela de empresas do CRM enriquecida com informações do CEP.
   - name: slv_censo_inep_2024_particulares_enem
     description : Escolas do censo inep com nota enem.
+  - name : slv_cubo33_aluno
+    descripition : Cubo 33 já com os filtros de aluno.
