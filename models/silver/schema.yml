@@ -36,3 +36,5 @@ models:
     description : Escolas do censo inep com nota enem.
   - name : slv_cubo33_aluno
     descripition : Cubo 33 já com os filtros de aluno.
+  - name : slv_cubo33_produtos_nao_categorizados
+    description : Produtos do cubo 33 que não está categorizado.
