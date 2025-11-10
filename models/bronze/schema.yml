@@ -172,6 +172,8 @@ sources:
       - name: brz_censo_2024_latlong_inep
       - name : brz_base_cep
         description : "Tabela de CEP do Brasil."
+      - name : brz_aluno_potencial
+        description : "Tabela de alunos potenciais por série alimentado pelo consultor."
   - name: operacoes
     database: DB_DM_OPE
     schema: dbo

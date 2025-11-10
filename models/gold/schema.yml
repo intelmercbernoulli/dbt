@@ -48,3 +48,5 @@ models:
     desciption : "Tabela dos alunos e faturamentos do último ano da escola."
   - name : gld_atual_alunos_todos_produtos
     description : "Tabela de alunos por produto do maior ano da base."
+  - name : gld_empresas_integracao_crm_mb
+    description : "Tabela para integração do CRM e Meu Bernoulli"
