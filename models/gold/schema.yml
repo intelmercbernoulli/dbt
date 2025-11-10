@@ -46,3 +46,5 @@ models:
     desciption : "Tabela dos alunos e faturamentos de todos os anos das escolas."
   - name : gld_escolas_faturamento_alunos_maior_ano.
     desciption : "Tabela dos alunos e faturamentos do último ano da escola."
+  - name : gld_atual_alunos_todos_produtos
+    description : "Tabela de alunos por produto do maior ano da base."
