@@ -17,14 +17,15 @@ with empresas as (
         [Código INEP],
         [Código Meu Bernoulli],
         [Código RM],
+        [Proprietário],
         [Gerência Pedagógica Atual],
         [Consultor Pedagógico Atual],
         [Consultor Bilíngue Atual],
         [Assistente de Tecnologia Educacional],
         [Início do Contrato]
     from {{ ref('slv_empresas_crm') }}
-),
-
+    WHERE [Tipo de Relação] NOT IN ('Livraria','Prospect')
+    ),
 alunos as (
     select *
     from {{ ref('slv_aluno_potencial_integracao_crm_mb') }}
