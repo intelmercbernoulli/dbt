@@ -40,3 +40,5 @@ models:
     description : Produtos do cubo 33 que não está categorizado.
   - name : slv_aluno_potencial_integracao_crm_mb
     descption : "Tabela com o aluno pontecial no formato para a integração do CRM e Meu Bernoulli"
+  - name : slv_contrato_atual_empresas_crm
+    description : "Contratos atuais das escolas do CRM" 
