@@ -50,3 +50,7 @@ models:
     description : "Tabela de alunos por produto do maior ano da base."
   - name : gld_empresas_integracao_crm_mb
     description : "Tabela para integração do CRM e Meu Bernoulli"
+  - name : gld_produtos_alterados
+    description : "Tabela com os produtos alterados a partir do snapshot alteracao_de_produto."
+  - name : gld_venda_diaria
+    description : "Tabela de alterações da venda diária a partir do snapshot escolas_alunos_rm."
