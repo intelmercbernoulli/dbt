@@ -13,11 +13,11 @@ sources:
         columns:
           - name: accountid
             description: "Identificador único da escola no CRM."
-          - name: Nome Fantasia
+          - name: "Nome Fantasia"
             description: "Nome comercial da escola."
-          - name: Quantidade Total de Alunos
+          - name: "Quantidade Total de Alunos"
             description: "Número total de alunos matriculados."
-          - name: Rede de Ensino
+          - name: "Rede de Ensino"
             description: "Rede de ensino ao qual a escola pertence."
           - name: Estado
             description: "Estado em que a escola está localizada."
@@ -33,121 +33,121 @@ sources:
             description: "Complemento do endereço (bloco, sala etc.)."
           - name: CEP
             description: "Código postal da escola."
-          - name: Ano da Rescisão
+          - name: "Ano da Rescisão"
             description: "Ano em que houve rescisão de contrato (se aplicável)."
-          - name: Status do Cliente - Financeiro
+          - name: "Status do Cliente - Financeiro"
             description: "Status financeiro do cliente no CRM."
-          - name: Início da Utilização
+          - name: "Início da Utilização"
             description: "Data de início de utilização dos serviços pelo cliente."
-          - name: Tipo de Relação
+          - name: "Tipo de Relação"
             description: "Tipo de relação da escola com a empresa (ex: cliente, prospect)."
-          - name: Situação do Cadastro
+          - name: "Situação do Cadastro"
             description: "Situação atual do cadastro da escola."
-          - name: Total Down Selling
+          - name: "Total Down Selling"
             description: "Valor total de redução de serviços ou produtos contratados."
-          - name: Categoria da Escola
+          - name: "Categoria da Escola"
             description: "Classificação ou categoria da escola."
-          - name: Escola referência na região
+          - name: "Escola referência na região"
             description: "Indica se a escola é referência na região."
-          - name: Código RM
+          - name: "Código RM"
             description: "Código da escola no sistema RM."
-          - name: Código INEP
+          - name: "Código INEP"
             description: "Código da escola no INEP."
-          - name: Código 1
+          - name: "Código 1"
             description: "Código RM antigo da escola."
-          - name: Código 2
+          - name: "Código 2"
             description: "Código RM antigo da escola."
-          - name: Código 3
+          - name: "Código 3"
             description: "Código RM antigo da escola."
-          - name: Data fim de contrato
+          - name: "Data fim de contrato"
             description: "Data de término do contrato com a escola."
-          - name: Data do Fim do Termo
+          - name: "Data do Fim do Termo"
             description: "Data final do termo específico do contrato."
-          - name: Curva ABCD
+          - name: "Curva ABCD"
             description: "Classificação da escola em curva ABCD para Experiência do Cliente."
-          - name: Contrato perdido para
+          - name: "Contrato perdido para"
             description: "Concorrente pelo qual o contrato foi perdido."
-          - name: Tipo de Atividade
+          - name: "Tipo de Atividade"
             description: "Tipo de atividade educacional da escola (Escola e ou PV)."
-          - name: Perfil da escola
+          - name: "Perfil da escola"
             description: "Perfil da escola para atuação comercial (ex: Pop Low, Média, Performance)."
-          - name: Código Meu Bernoulli
+          - name: "Código Meu Bernoulli"
             description: "Código interno utilizado no sistema Meu Bernoulli."
-          - name: Sistema de Ensino
+          - name: "Sistema de Ensino"
             description: "Sistema de ensino adotado pela escola."
-          - name: Área de Atuação
+          - name: "Área de Atuação"
             description: "Para qual marca a escola stá alocada para atuação comercial."
-          - name: Cliente Plugbook?
+          - name: "Cliente Plugbook?"
             description: "Indica se o cliente utiliza o sistema Plugbook."
-          - name: Início da Utilização Plugbook
+          - name: "Início da Utilização Plugbook"
             description: "Data de início do uso do Plugbook pelo cliente."
-          - name: Sensibilidade Tabela 2021
+          - name: "Sensibilidade Tabela 2021"
             description: "Sensibilidade da escola à tabela de preços de 2021."
-          - name: Sensibilidade Tabela 2022
+          - name: "Sensibilidade Tabela 2022"
             description: "Sensibilidade da escola à tabela de preços de 2022."
-          - name: Sensibilidade Tabela 2023
+          - name: "Sensibilidade Tabela 2023"
             description: "Sensibilidade da escola à tabela de preços de 2023."
-          - name: Sensibilidade Tabela 2024
+          - name: "Sensibilidade Tabela 2024"
             description: "Sensibilidade da escola à tabela de preços de 2024."
-          - name: Sensibilidade Tabela 2025
+          - name: "Sensibilidade Tabela 2025"
             description: "Sensibilidade da escola à tabela de preços de 2025."
-          - name: Escola em Serviço?
+          - name: "Escola em Serviço?"
             description: "Indica se a escola está atualmente em serviço."
-          - name: Gerência Pedagógica Atual
+          - name: "Gerência Pedagógica Atual"
             description: "Gerência pedagógica responsável atualmente."
-          - name: Consultor Pedagógico Atual
+          - name: "Consultor Pedagógico Atual"
             description: "Consultor pedagógico responsável atualmente."
-          - name: Proprietário
+          - name: "Proprietário"
             description: "Nome do consultor alocado para a a escola."
-          - name: Liderança Regional
+          - name: "Liderança Regional"
             description: "Responsável pela liderança regional da escola."
-          - name: Liderança Nacional
+          - name: "Liderança Nacional"
             description: "Responsável pela liderança nacional da escola."
-          - name: Consultor Bilíngue Atual
+          - name: "Consultor Bilíngue Atual"
             description: "Consultor bilíngue atualmente responsável."
-          - name: Forma de Blindagem
+          - name: "Forma de Blindagem"
             description: "Forma de blindagem aplicada à escola."
-          - name: Motivo da Blindagem
+          - name: "Motivo da Blindagem"
             description: "Motivo pelo qual a blindagem foi aplicada."
-          - name: Concorrente específico 1
+          - name: "Concorrente específico 1"
             description: "Concorrente específico relacionado à escola."
-          - name: Concorrente específico 2
+          - name: "Concorrente específico 2"
             description: "Segundo concorrente específico."
-          - name: Concorrente específico 3
+          - name: "Concorrente específico 3"
             description: "Terceiro concorrente específico."
-          - name: Concorrente específico 4
+          - name: "Concorrente específico 4"
             description: "Quarto concorrente específico."
-          - name: Concorrente específico 5
+          - name: "Concorrente específico 5"
             description: "Quinto concorrente específico."
-          - name: Motivo da Rescisão
+          - name: "Motivo da Rescisão"
             description: "Motivo pelo qual o contrato foi rescindido."
-          - name: Tipo de Rescisão
+          - name: "Tipo de Rescisão"
             description: "Tipo de rescisão do contrato."
-          - name: Data da Formalização
+          - name: "Data da Formalização"
             description: "Data em que a rescisão foi formalizada."
-          - name: Alunos Perdidos
+          - name: "Alunos Perdidos"
             description: "Número de alunos perdidos após a rescisão."
-          - name: Estimativa de Faturamento
+          - name: "Estimativa de Faturamento"
             description: "Estimativa de faturamento da escola."
-          - name: Material Perdido na Rescisão
+          - name: "Material Perdido na Rescisão"
             description: "Materiais que foram perdidos ou devolvidos na rescisão."
-          - name: Tipo de Frete
+          - name: "Tipo de Frete"
             description: "Tipo de frete aplicado à escola."
-          - name: Percentual de frete
+          - name: "Percentual de frete"
             description: "Percentual aplicado ao frete."
-          - name: Status
+          - name: "Status"
             description: "Status geral do cadastro da escola."
-          - name: Faturar por Livraria
+          - name: "Faturar por Livraria"
             description: "Indica se a escola é faturada por livraria."
-          - name: Livraria
+          - name: "Livraria"
             description: "Nome da livraria responsável pelo faturamento."
-          - name: Livraria 2
+          - name: "Livraria 2"
             description: "Segunda livraria responsável (se houver)."
-          - name: CNPJ
+          - name: "CNPJ"
             description: "CNPJ da escola."
-          - name: Possui Aporte?
+          - name: "Possui Aporte?"
             description: "Indica se a escola possui aporte financeiro."
-          - name: Valor do Aporte
+          - name: "Valor do Aporte"
             description: "Valor financeiro do aporte."
       - name: Premio_Expurgos_Dim
       - name: brz_categorizacao_produtos
@@ -166,16 +166,43 @@ sources:
       - name: brz_registro_de_atendimento
       - name: brz_vendas_historico
       - name: brz_estimativas
-      - name: brz_vendacolecao_rm
       - name: brz_censo_inep_2024
+      - name: brz_censo_inep_2023
       - name: brz_enem_2024
       - name: brz_censo_2024_latlong_inep
       - name : brz_base_cep
         description : "Tabela de CEP do Brasil."
       - name : brz_aluno_potencial
         description : "Tabela de alunos potenciais por série alimentado pelo consultor."
+      - name: brz_vendacolecao_rm
+        loader: "ERP (RM) - SQL Server"
+        meta:
+          loader: "ERP (RM) - SQL Server"
+      - name : brz_pedidos_rm
+        loader : "ERP (RM) - SQL Server"
       - name : brz_conferenciaprodutos_rm
         description : "Cadastro do material."
+        loader : "ERP (RM) - SQL Server"
+      - name : brz_tabelapremio_rm
+        loader : "ERP (RM) - SQL Server"
+      - name : brz_movimentacao_entrada_rm
+        loader : "ERP (RM) - SQL Server"
+      - name : brz_estoque_consolidado_rm
+        loader : "ERP (RM) - SQL Server"
+      - name : brz_remessa_industrializacao_rm
+        loader : "ERP (RM) - SQL Server"
+      - name : brz_saldo_protheus_rm
+        loader : "ERP (RM) - SQL Server"
+      - name : brz_tabelapreco_rm
+        loader : "ERP (RM) - SQL Server"
+      - name : brz_informacoes_pb_rm
+        loader : "ERP (RM) - SQL Server"
+      - name : brz_clientes_rm
+        loader : "ERP (RM) - SQL Server"
+      - name : brz_campocompl_rm
+        loader : "ERP (RM) - SQL Server"
+      - name : brz_dados_consultores_rm
+        loader : "ERP (RM) - SQL Server"
   - name: operacoes
     database: DB_DM_OPE
     schema: dbo

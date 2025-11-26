@@ -42,3 +42,5 @@ models:
     descption : "Tabela com o aluno pontecial no formato para a integração do CRM e Meu Bernoulli"
   - name : slv_contrato_atual_empresas_crm
     description : "Contratos atuais das escolas do CRM" 
+  - name : select slv_censo_inep_unico
+    descption :  tabel qe traz somente os códigos ineps que estão em 2024 mas não estavam em 2023.
