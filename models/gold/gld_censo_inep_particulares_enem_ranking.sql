@@ -24,19 +24,16 @@ rankings as (
     select
         *,
 
-        /* Ranking geral por nota ENEM */
+        /* Ranking geral (todas as escolas) */
         rank() over (
             order by nota_enem desc
         ) as ranking_geral_nota_enem,
 
-        /* Ranking geral considerando apenas escolas com alunos > 100 */
-        case
-            when alunos >= 100 then
-                rank() over (
-                    partition by case when alunos >= 100 then 1 end
-                    order by nota_enem desc
-                )
-        end as ranking_geral_nota_enem_alunos_100,
+        /* Ranking geral – somente escolas com >= 100 alunos */
+        rank() over (
+            order by 
+                case when alunos >= 100 then nota_enem end desc
+        ) as ranking_geral_nota_enem_alunos_100,
 
         /* Ranking por UF */
         rank() over (
@@ -44,18 +41,29 @@ rankings as (
             order by nota_enem desc
         ) as ranking_uf_nota_enem,
 
-        /* Ranking por UF considerando apenas escolas com alunos > 100 */
-        case
-            when alunos >= 100 then
-                rank() over (
-                    partition by SG_UF, case when alunos >= 100 then 1 end
-                    order by nota_enem desc
-                )
-        end as ranking_uf_nota_enem_alunos_100
+        /* Ranking por UF – somente escolas com >= 100 alunos */
+        rank() over (
+            partition by SG_UF
+            order by 
+                case when alunos >= 100 then nota_enem end desc
+        ) as ranking_uf_nota_enem_alunos_100,
+
+        /* >>> NOVO: Ranking por Município + UF (todas) <<< */
+        rank() over (
+            partition by SG_UF, NO_MUNICIPIO
+            order by nota_enem desc
+        ) as ranking_municipio_uf_nota_enem,
+
+        /* >>> NOVO: Ranking por Município + UF (>= 100 alunos) <<< */
+        rank() over (
+            partition by SG_UF, NO_MUNICIPIO
+            order by 
+                case when alunos >= 100 then nota_enem end desc
+        ) as ranking_municipio_uf_nota_enem_alunos_100
 
     from base
 
 )
 
 select *
-from rankings
+from rankings;
