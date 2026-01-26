@@ -15,7 +15,6 @@ SELECT
     [id_account],
     [Contrato Atual],
     [Vencimento do Contrato Atual]
-    -- Adicione aqui outras colunas que você deseja manter
 FROM ordenado
 WHERE rn = 1
   AND [id_account] IS NOT NULL

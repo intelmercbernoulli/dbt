@@ -43,4 +43,10 @@ models:
   - name : slv_contrato_atual_empresas_crm
     description : "Contratos atuais das escolas do CRM" 
   - name : select slv_censo_inep_unico
-    descption :  tabel qe traz somente os códigos ineps que estão em 2024 mas não estavam em 2023.
+    descption :  Tabela com códigos ineps que estão em 2024 mas não estavam em 2023.
+  - name : slv_passaporte
+    description : Tabela de solicitações de passaporte.
+  - name : slv_passaporte_finalizado
+    description : Tabela de solicitações de passaporte finalizadas, exceto "Passaporte Cancelado".
+  - name : slv_atendimento_novos_negocios
+    description : Tabela de solicitações atendidas pelo setor de novos negócios.

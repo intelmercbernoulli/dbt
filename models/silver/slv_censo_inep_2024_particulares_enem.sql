@@ -9,7 +9,8 @@ SELECT c.[NU_ANO_CENSO],
       c.[QT_MAT_FUND_AI],
       c.[QT_MAT_FUND_AF],
       c.[QT_MAT_MED],
-      e.[nota_enem]
+      e.[nota_enem],
+      e.[alunos]
 FROM {{ source('intel_merc', 'brz_censo_inep_2024') }}  c
 LEFT JOIN {{ source('intel_merc', 'brz_enem_2024') }}  e
        ON c.[CO_ENTIDADE] = e.[CO_ESCOLA]

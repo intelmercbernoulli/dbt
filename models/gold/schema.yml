@@ -54,3 +54,18 @@ models:
     description : "Tabela com os produtos alterados a partir do snapshot alteracao_de_produto."
   - name : gld_venda_diaria
     description : "Tabela de alterações da venda diária a partir do snapshot escolas_alunos_rm."
+  - name : gld_oportunidades_pre_filtradas_novos_negocios
+    description : Oportunidades fechadas comerciais para ser usado na gld_oportunidades_novos_negocios.
+  - name : gld_oportunidades_novos_negocios
+    description : Oportunidades com flags de passaporte ou atendimento no mesmo ano de fechamento da negociação.
+  - name : gld_novos_negocios
+    description : Dado detalhado de escolas com oportunidades, atendimentos e passaportes.
+  - name : gld_atendimentos_novos_negocios_oportunidades
+    description : Atendimentos realizados pelo Novos Negócios com dados das oportunidades fechadas.
+  - name : gld_passaportes_oportunidades
+    description : Passaportes realizados pelo Novos Negócios com dados das oportunidades fechadas.
+  - name : gld_oportunidades_novos_negocio_passaporte_atendimento
+    description : Oportunidades fechadas e se teve algum passaporte ou atendimento.
+  - name : gld_censo_inep_particulares_enem_ranking
+    description : Escolas particulares com nota ENEM e Ranking
+  - name : gld_censo_inep_enem_todos_anos

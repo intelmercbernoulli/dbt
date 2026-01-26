@@ -203,11 +203,13 @@ sources:
         loader : "ERP (RM) - SQL Server"
       - name : brz_dados_consultores_rm
         loader : "ERP (RM) - SQL Server"
+      - name : brz_solicitacoes_crm
   - name: operacoes
     database: DB_DM_OPE
     schema: dbo
     tables: 
       - name: BI_VENDACOLECAO
+      - name: BI_VENDACOLECAO_MULTITUDE
   - name: hom_corpore
     database: SQL_DL_HOM_CORPORE
     schema: dbo
