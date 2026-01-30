@@ -11,6 +11,11 @@ SELECT c.[NU_ANO_CENSO],
       c.[QT_MAT_FUND_AF],
       c.[QT_MAT_MED],
       e.[nota_enem],
+      e.[NU_NOTA_CN],
+      e.[NU_NOTA_CH],
+      e.[NU_NOTA_LC],
+      e.[NU_NOTA_MT],
+      e.[NU_NOTA_REDACAO],
       e.[alunos]
 FROM {{ source('intel_merc', 'brz_censo_inep_2024') }}  c
 LEFT JOIN {{ source('intel_merc', 'brz_enem_2024') }}  e
