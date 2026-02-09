@@ -35,7 +35,7 @@ empresas AS (
         [Estado],
         [Cidade],
         [Perfil da escola],
-        [Liderança Regional],
+        [Gerência Regional BSE],
         [Porte],
         [Região]
     FROM {{ ref('slv_empresas_crm') }}
@@ -65,7 +65,7 @@ SELECT
     e.[Estado],
     e.[Cidade],
     e.[Perfil da escola],
-    e.[Liderança Regional],
+    e.[Gerência Regional BSE],
     e.[Porte],
     e.[Região]
 
