@@ -8,4 +8,4 @@ CASE
 END AS prioridade_status_atendimento
 FROM
 {{ source ('intel_merc', 'brz_registro_de_atendimento') }}
-WHERE [Setor Relacionado] = 'Experiência do Cliente'
+-- WHERE [Setor Relacionado] = 'Experiência do Cliente'
