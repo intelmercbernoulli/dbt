@@ -1,0 +1,27 @@
+SELECT 
+      [NU_ANO_CENSO]
+    , [NO_REGIAO]
+    , [CO_REGIAO]
+    , [NO_UF]
+    , [SG_UF]
+    , [CO_UF]
+    , [NO_MUNICIPIO]
+    , [CO_MUNICIPIO]
+    , [CO_DISTRITO]
+    , [CO_ENTIDADE]
+    , [NO_ENTIDADE]
+    , [TP_DEPENDENCIA]
+    , [TP_CATEGORIA_ESCOLA_PRIVADA]
+    , [TP_SITUACAO_FUNCIONAMENTO]
+    , [IN_REGULAR]
+    , CAST([QT_MAT_BAS] AS INT)      AS QT_MAT_BAS
+    , CAST([QT_MAT_INF] AS INT)      AS QT_MAT_INF
+    , CAST([QT_MAT_FUND] AS INT)     AS QT_MAT_FUND
+    , CAST([QT_MAT_FUND_AI] AS INT)  AS QT_MAT_FUND_AI
+    , CAST([QT_MAT_FUND_AF] AS INT)  AS QT_MAT_FUND_AF
+    , CAST([QT_MAT_MED] AS INT)      AS QT_MAT_MED
+FROM {{ source('intel_merc', 'brz_censo_inep') }}
+WHERE 
+    [TP_DEPENDENCIA] = '4'
+    AND [TP_SITUACAO_FUNCIONAMENTO] = '1'
+    AND [IN_REGULAR] = '1'

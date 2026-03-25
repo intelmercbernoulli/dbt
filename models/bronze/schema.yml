@@ -170,40 +170,45 @@ sources:
       - name: brz_censo_inep_2023
       - name: brz_enem_2024
       - name: brz_censo_2024_latlong_inep
-      - name : brz_base_cep
+      - name: brz_base_cep
         description : "Tabela de CEP do Brasil."
-      - name : brz_aluno_potencial
+      - name: brz_aluno_potencial
         description : "Tabela de alunos potenciais por série alimentado pelo consultor."
       - name: brz_vendacolecao_rm
         loader: "ERP (RM) - SQL Server"
         meta:
           loader: "ERP (RM) - SQL Server"
-      - name : brz_pedidos_rm
+      - name: brz_pedidos_rm
         loader : "ERP (RM) - SQL Server"
-      - name : brz_conferenciaprodutos_rm
+      - name: brz_conferenciaprodutos_rm
         description : "Cadastro do material."
         loader : "ERP (RM) - SQL Server"
-      - name : brz_tabelapremio_rm
+      - name: brz_tabelapremio_rm
         loader : "ERP (RM) - SQL Server"
-      - name : brz_movimentacao_entrada_rm
+      - name: brz_movimentacao_entrada_rm
         loader : "ERP (RM) - SQL Server"
-      - name : brz_estoque_consolidado_rm
+      - name: brz_estoque_consolidado_rm
         loader : "ERP (RM) - SQL Server"
-      - name : brz_remessa_industrializacao_rm
+      - name: brz_remessa_industrializacao_rm
         loader : "ERP (RM) - SQL Server"
-      - name : brz_saldo_protheus_rm
+      - name: brz_saldo_protheus_rm
         loader : "ERP (RM) - SQL Server"
-      - name : brz_tabelapreco_rm
+      - name: brz_tabelapreco_rm
         loader : "ERP (RM) - SQL Server"
-      - name : brz_informacoes_pb_rm
+      - name: brz_informacoes_pb_rm
         loader : "ERP (RM) - SQL Server"
-      - name : brz_clientes_rm
+      - name: brz_clientes_rm
         loader : "ERP (RM) - SQL Server"
-      - name : brz_campocompl_rm
+      - name: brz_campocompl_rm
         loader : "ERP (RM) - SQL Server"
-      - name : brz_dados_consultores_rm
+      - name: brz_dados_consultores_rm
         loader : "ERP (RM) - SQL Server"
-      - name : brz_solicitacoes_crm
+      - name: brz_solicitacoes_crm
+      - name: brz_censo_inep
+      - name: brz_pedidos_eskolare
+      - name: brz_pedidos_raizes
+      - name: brz_datas_escolas_eskolare
+      - name: brz_grupo_faturamento_eskolare
   - name: operacoes
     database: DB_DM_OPE
     schema: dbo
@@ -216,6 +221,9 @@ sources:
     tables:
       - name: VW_BI_ESTIMATIVA
       - name: VW_BASE_FATURAMENTO_PREMIO
+      - name: FCFO
+      - name: ZMDBENEFICIOSCNT
+      - name: GCONSIST
   - name: hom_corpore_prod
     database: ERP_HOM_CORPORE
     schema: dbo
@@ -229,3 +237,4 @@ models:
   - name: brz_base_faturamento_premio
     config:
       enabled: false
+  - name: brz_beneficios_contratuais_rm

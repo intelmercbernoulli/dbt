@@ -1,0 +1,1 @@
+select * from {{ source('intel_merc', 'brz_pedidos_eskolare') }}

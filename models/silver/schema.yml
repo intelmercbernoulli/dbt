@@ -50,3 +50,7 @@ models:
     description : Tabela de solicitações de passaporte finalizadas, exceto "Passaporte Cancelado".
   - name : slv_atendimento_novos_negocios
     description : Tabela de solicitações atendidas pelo setor de novos negócios.
+  - name : slv_registro_de_atendimento_crm
+    description : Tabela tratada do registro de atendimentos do CRM.
+  - name : slv_pedidos_base
+    description : Tabela da join entre pedidos do Eskolare, data de início das escolas e pedidos no Raízes.
